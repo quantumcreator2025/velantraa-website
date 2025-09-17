@@ -3,188 +3,1234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velantraa Exports LLP - Global Export Solutions</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <title>Velantraa Exports LLP - India's Gateway to Global Exports</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
     <style>
         :root {
-            --primary-color: #2B2D42;
-            --secondary-color: #8D99AE;
-            --accent-color: #EF233C;
-            --light-bg: #EDF2F4;
-            --white: #FFFFFF;
-            --black: #000000;
+            --primary-color: #d4af37; /* Gold from logo */
+            --primary-dark: #b8941f;
+            --secondary-color: #0d47a1; /* Professional blue */
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --gradient: linear-gradient(135deg, #d4af37, #f9e79f);
         }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
         }
-        
-        .navbar {
-            background-color: var(--primary-color) !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
-        
-        .navbar-brand img {
-            height: 50px;
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        
-        .hero-section {
-            background: linear-gradient(rgba(43, 45, 66, 0.8), rgba(43, 45, 66, 0.8)), 
-                        url('https://picsum.photos/seed/export-business/1920/800.jpg');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 150px 0 100px;
-            text-align: center;
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+
+        .logo {
+            display: flex;
+            align-items: center;
         }
-        
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+
+        .logo img {
+            height: 60px;
         }
-        
-        .btn-custom {
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 50px;
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
             text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-logo {
+            margin-bottom: 30px;
+        }
+
+        .hero-logo img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--dark-color);
+            text-decoration: none;
+            border-radius: 30px;
             font-weight: 600;
             margin: 0 10px;
-            transition: all 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        
-        .btn-custom:hover {
-            background-color: #d62241;
-            color: var(--white);
-            transform: translateY(-2px);
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: var(--dark-color);
         }
-        
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 40px 0 20px;
-            margin-top: 80px;
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: white;
         }
-        
-        .social-icons a {
-            color: var(--white);
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
             font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
+            margin-bottom: 15px;
+            color: var(--dark-color);
         }
-        
-        .social-icons a:hover {
-            color: var(--accent-color);
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1605722249429-a275da8f9e61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Mission/Vision Section */
+        .mission-vision {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .mv-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .mv-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .mv-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .mv-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .mv-subtitle {
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .mv-list {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .mv-list li {
+            margin-bottom: 12px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .mv-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .core-values {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .core-values h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+        }
+
+        .core-values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .value-item {
+            background: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .value-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            text-align: center;
+            background: var(--light-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-img {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .team-member:hover .member-img img {
+            transform: scale(1.1);
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .member-info p {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .product-info p {
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-form {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .contact-form p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .form-intro {
+            background: var(--gradient);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-intro h4 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .form-intro p {
+            color: var(--dark-color);
+            margin: 0;
+        }
+
+        .google-form-container {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 0 auto;
+            max-width: 100%;
+            height: 900px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .google-form-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .quick-support {
+            background: var(--gradient);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .quick-support h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .social-links a i {
+            font-size: 1.2rem;
+        }
+
+        .x-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                height: auto;
+                padding: 120px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .google-form-container {
+                height: 800px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+            }
+            
+            .google-form-container {
+                height: 700px;
+            }
+        }
+
+        /* Page specific adjustments */
+        .page-section {
+            padding: 80px 0;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .page-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient);
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="Velantraa Exports LLP" class="img-fluid">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mission-vision.html">Mission/Vision</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="team.html">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-                </ul>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://z-cdn-media.chatglm.cn/files/bffb1549-4c15-449e-b613-22072b773584_Logo%20without%20Background_Velantraa.png?auth_key=1788333934-60f33241d3254dff856ea431c7b9c15d-0-baf5a7a25eb81c2beed6a48e260f8e8f" alt="Velantraa Exports LLP">
             </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="mission-vision.html">Mission & Vision</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
+    <!-- Home Page Content -->
+    <section id="home-page">
+        <!-- Hero Section -->
+        <section class="hero">
             <div class="hero-content">
-                <h1>Velantraa Exports LLP</h1>
-                <p>Your trusted partner in global trade, delivering quality products to the USA and international markets.</p>
-                <a href="products.html" class="btn btn-custom">View Products</a>
-                <a href="contact.html" class="btn btn-custom">Contact Us</a>
+                <div class="hero-logo">
+                    <img src="https://z-cdn-media.chatglm.cn/files/bffb1549-4c15-449e-b613-22072b773584_Logo%20without%20Background_Velantraa.png?auth_key=1788333934-60f33241d3254dff856ea431c7b9c15d-0-baf5a7a25eb81c2beed6a48e260f8e8f" alt="Velantraa Exports LLP">
+                </div>
+                <h1>Bringing India's Natural & Cultural Treasures to the World</h1>
+                <p>From Ayurvedic wellness to fashion and lifestyle goods, Velantraa connects India's finest products with global markets.</p>
+                <div>
+                    <a href="products.html" class="btn">View Products</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose Velantraa</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Global Reach</h3>
+                        <p>We connect Indian products with markets worldwide, establishing a strong global presence for our partners.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Quality Assurance</h3>
+                        <p>Our rigorous quality control processes ensure that only the finest products reach our international clients.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Trusted Partnerships</h3>
+                        <p>We build long-term relationships based on transparency, reliability, and mutual growth with our clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- About Us Page Content -->
+    <section id="about-page" style="display: none;">
+        <div class="page-section about">
+            <div class="container">
+                <div class="page-title">
+                    <h1>About Us</h1>
+                </div>
+                <div class="about-content">
+                    <p>Velantraa Exports LLP was founded by three visionary women entrepreneurs with a shared passion for bringing India's rich natural and agricultural heritage to the global marketplace. Our journey began with a simple yet powerful belief: that India's diverse natural resources, cultivated through generations of traditional wisdom, deserve recognition and appreciation worldwide.</p>
+                    
+                    <p>As a women-led enterprise, we bring a unique perspective to the export industry, combining attention to detail, ethical business practices and a deep understanding of both local producers and international market needs. Our team works tirelessly to ensure that every product leaving our shores meets the highest standards of quality, sustainability and compliance with global regulations.</p>
+                    
+                    <p>At Velantraa Exports LLP, we pride ourselves on our professional approach, transparent operations and commitment to building lasting relationships with our partners across the globe. Our expertise in navigating complex international trade regulations, coupled with our extensive network of trusted suppliers, enables us to deliver excellence in every shipment.</p>
+                    
+                    <p>From sourcing the finest agricultural products to ensuring they reach international markets in perfect condition, we manage every aspect of the export process with precision and care. Our dedication to quality, reliability and customer satisfaction has established us as a trusted name in the export industry.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-globe fa-3x mb-3" style="color: var(--accent-color);"></i>
-                    <h4>Global Reach</h4>
-                    <p>Exporting to USA and international markets with reliable logistics.</p>
+    <!-- Mission & Vision Page Content -->
+    <section id="mission-vision-page" style="display: none;">
+        <div class="page-section mission-vision">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Mission & Vision</h1>
                 </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-certificate fa-3x mb-3" style="color: var(--accent-color);"></i>
-                    <h4>Quality Assurance</h4>
-                    <p>Committed to delivering the highest quality products to our clients.</p>
+                <div class="mv-container">
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To deliver exceptional quality products to global markets while building lasting partnerships based on trust, reliability and mutual growth.</p>
+                        
+                        <h4 class="mv-subtitle">Quality Excellence</h4>
+                        <p>We are committed to maintaining the highest standards of quality in every product we export, ensuring complete customer satisfaction.</p>
+                        
+                        <h4 class="mv-subtitle">Global Reach</h4>
+                        <p>To expand our presence in international markets by understanding and meeting diverse customer needs.</p>
+                        
+                        <h4 class="mv-subtitle">Sustainable Practices</h4>
+                        <p>To promote environmentally responsible and sustainable business practices throughout our supply chain.</p>
+                    </div>
+                    <div class="mv-card">
+                        <div class="mv-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To be the most trusted and preferred export partner globally, recognized for excellence, innovation and ethical business practices.</p>
+                        
+                        <h4 class="mv-subtitle">Industry Leadership</h4>
+                        <p>To lead the export industry through innovation, technology adoption and continuous improvement in all aspects of our business.</p>
+                        
+                        <h4 class="mv-subtitle">Customer Centricity</h4>
+                        <p>To place our customers at the heart of everything we do, anticipating their needs and exceeding their expectations consistently.</p>
+                        
+                        <h4 class="mv-subtitle">Global Impact</h4>
+                        <p>To make a positive impact on global trade by fostering international relationships and contributing to economic growth.</p>
+                    </div>
                 </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-handshake fa-3x mb-3" style="color: var(--accent-color);"></i>
-                    <h4>Trusted Partner</h4>
-                    <p>Building long-term relationships based on trust and excellence.</p>
+                
+                <div class="core-values">
+                    <h3>Our Core Values</h3>
+                    <div class="core-values-grid">
+                        <div class="value-item">
+                            <h4>Integrity</h4>
+                            <p>Conducting business with honesty and transparency</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Quality</h4>
+                            <p>Uncompromising commitment to excellence</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Partnership</h4>
+                            <p>Building lasting relationships with clients</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Innovation</h4>
+                            <p>Continuously improving and adapting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Page Content -->
+    <section id="team-page" style="display: none;">
+        <div class="page-section team">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Our Leadership Team</h1>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://z-cdn-media.chatglm.cn/files/5026173d-cb4c-4e26-99d4-cbb63e707aea_Dummy1.jpg?auth_key=1788333934-5a73c100e9ed4f97b022b2627c552096-0-dee7c9f2cc7b0ed924bb11e2795d47fa" alt="Shruti Joshi">
+                        </div>
+                        <div class="member-info">
+                            <h3>Shruti Joshi</h3>
+                            <p>Co-Founder</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://z-cdn-media.chatglm.cn/files/f39d5b19-c35b-47a3-80ac-ad37a85bfd5b_Dummy2.jpg?auth_key=1788333934-737e4fbbf682457ba0615a910fd534d6-0-2f28dc5cd9c41f6f42641b13e5305a90" alt="Priyanka Rabhadia">
+                        </div>
+                        <div class="member-info">
+                            <h3>Priyanka Rabhadia</h3>
+                            <p>Co-Founder</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://z-cdn-media.chatglm.cn/files/b3a0901d-c115-46b8-98fa-fa6225a9ae9f_Dummy3.jpg?auth_key=1788333934-23afb742f44d4df09c28ab36d45475bf-0-dce12e3b2186910e755ed063fbeb2fcc" alt="Sushama Joshi">
+                        </div>
+                        <div class="member-info">
+                            <h3>Sushama Joshi</h3>
+                            <p>Co-Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Page Content -->
+    <section id="products-page" style="display: none;">
+        <div class="page-section products">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Our Products</h1>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Agriculture Products" onerror="this.src='https://via.placeholder.com/300x200?text=Agriculture+Products'">
+                        </div>
+                        <div class="product-info">
+                            <h3>Agriculture Products</h3>
+                            <p>Premium quality agricultural products including grains, pulses, oilseeds, and other farm-fresh produce sourced directly from trusted Indian farmers.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1592839626260-2700b983b295?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Natural Powders & Extracts" onerror="this.src='https://via.placeholder.com/300x200?text=Natural+Powders+%26+Extracts'">
+                        </div>
+                        <div class="product-info">
+                            <h3>Natural Powders & Extracts</h3>
+                            <p>Pure and potent natural powders and extracts derived from plants, herbs, and fruits, perfect for wellness, cosmetic, and nutraceutical applications.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Spices & Blends" onerror="this.src='https://via.placeholder.com/300x200?text=Spices+%26+Blends'">
+                        </div>
+                        <div class="product-info">
+                            <h3>Spices & Blends</h3>
+                            <p>Aromatic and flavorful Indian spices and custom spice blends that bring authentic taste to cuisines worldwide, sourced from the finest growing regions.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Herbal & Ayurvedic Products" onerror="this.src='https://via.placeholder.com/300x200?text=Herbal+%26+Ayurvedic+Products'">
+                        </div>
+                        <div class="product-info">
+                            <h3>Herbal & Ayurvedic Products</h3>
+                            <p>Traditional herbal and Ayurvedic formulations prepared using ancient wisdom and modern techniques to promote holistic health and wellness.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Flowers & Botanicals" onerror="this.src='https://via.placeholder.com/300x200?text=Flowers+%26+Botanicals'">
+                        </div>
+                        <div class="product-info">
+                            <h3>Flowers & Botanicals</h3>
+                            <p>Exquisite Indian flowers and botanicals including essential oils, dried flowers, and plant extracts for aromatherapy, cosmetics, and decorative purposes.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1605002590951-35a277927256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Organic & Sustainable" onerror="this.src='https://via.placeholder.com/300x200?text=Organic+%26+Sustainable'">
+                        </div>
+                        <div class="product-info">
+                            <h3>Organic & Sustainable</h3>
+                            <p>Certified organic and sustainably produced items that support environmental conservation and fair trade practices, from food to textiles.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fashion & Lifestyle" onerror="this.src='https://via.placeholder.com/300x200?text=Fashion+%26+Lifestyle'">
+                        </div>
+                        <div class="product-info">
+                            <h3>Fashion & Lifestyle</h3>
+                            <p>Contemporary and traditional Indian fashion and lifestyle products including textiles, handicrafts, jewelry, and home decor items that showcase India's rich cultural heritage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Page Content -->
+    <section id="contact-page" style="display: none;">
+        <div class="page-section contact">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Contact Us</h1>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p>Unit No. 02, A-Wing, Sea-Bird CHS, Dias and Pereira Nagar, 401207</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p>info@velantraa.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p>+91-93265 15934</p>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-support">
+                            <h3>Quick Support</h3>
+                            <p><strong>Working Hours:</strong> Monday to Friday: 9:30 AM - 6:30 PM</p>
+                            <p>Saturday: 9:30 AM - 2:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        
+                        <div class="form-intro">
+                            <h4>We'd Love to Hear From You</h4>
+                            <p>Please fill out the form below and we'll get back to you as soon as possible.</p>
+                        </div>
+                        
+                        <div class="google-form-container">
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfTPIpMRoTy1gohtSrH7TqZKUohUAd6eMn25HEf5wcRWkpBQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="images/logo.png" alt="Velantraa Exports LLP" height="40" class="mb-3">
-                    <p>&copy; 2024 Velantraa Exports LLP. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-end">
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <img src="https://z-cdn-media.chatglm.cn/files/bffb1549-4c15-449e-b613-22072b773584_Logo%20without%20Background_Velantraa.png?auth_key=1788333934-60f33241d3254dff856ea431c7b9c15d-0-baf5a7a25eb81c2beed6a48e260f8e8f" alt="Velantraa Exports LLP" class="footer-logo">
+                    <p>India's Gateway to Global Exports</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/velantraaexports" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/velantraa" target="_blank">
+                            <svg class="x-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/velantraa" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mission-vision.html">Mission & Vision</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Products</h3>
+                    <ul>
+                        <li><a href="products.html">Agriculture Products</a></li>
+                        <li><a href="products.html">Natural Powders & Extracts</a></li>
+                        <li><a href="products.html">Spices & Blends</a></li>
+                        <li><a href="products.html">Herbal & Ayurvedic Products</a></li>
+                        <li><a href="products.html">Flowers & Botanicals</a></li>
+                        <li><a href="products.html">Organic & Sustainable</a></li>
+                        <li><a href="products.html">Fashion & Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Unit No. 02, A-Wing, Sea-Bird CHS, Dias and Pereira Nagar, 401207</li>
+                        <li><i class="fas fa-envelope"></i> info@velantraa.com</li>
+                        <li><i class="fas fa-phone"></i> +91-93265 15934</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Velantraa Exports LLP. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('section[id$="-page"]').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show selected page
+            if (pageId !== 'home-page') {
+                document.getElementById(pageId).style.display = 'block';
+            } else {
+                document.getElementById('home-page').style.display = 'block';
+            }
+            
+            // Close mobile menu if open
+            document.querySelector('nav ul').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                let pageId = 'home-page';
+                
+                if (href === 'about.html') pageId = 'about-page';
+                else if (href === 'mission-vision.html') pageId = 'mission-vision-page';
+                else if (href === 'team.html') pageId = 'team-page';
+                else if (href === 'products.html') pageId = 'products-page';
+                else if (href === 'contact.html') pageId = 'contact-page';
+                
+                showPage(pageId);
+            });
+        });
+
+        // Footer links
+        document.querySelectorAll('footer a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').endsWith('.html')) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    let pageId = 'home-page';
+                    
+                    if (href === 'about.html') pageId = 'about-page';
+                    else if (href === 'mission-vision.html') pageId = 'mission-vision-page';
+                    else if (href === 'team.html') pageId = 'team-page';
+                    else if (href === 'products.html') pageId = 'products-page';
+                    else if (href === 'contact.html') pageId = 'contact-page';
+                    
+                    showPage(pageId);
+                }
+            });
+        });
+
+        // Initialize with home page
+        showPage('home-page');
+    </script>
 </body>
 </html>
