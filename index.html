@@ -161,22 +161,12 @@
             font-weight: 600;
             margin: 0 10px;
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
 
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            color: var(--dark-color);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-color);
             color: var(--dark-color);
         }
 
@@ -790,12 +780,12 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="mission-vision.html">Mission & Vision</a></li>
-                    <li><a href="team.html">Our Team</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#home-page">Home</a></li>
+                    <li><a href="#about-page">About Us</a></li>
+                    <li><a href="#mission-vision-page">Mission & Vision</a></li>
+                    <li><a href="#team-page">Our Team</a></li>
+                    <li><a href="#products-page">Products</a></li>
+                    <li><a href="#contact-page">Contact Us</a></li>
                 </ul>
                 <div class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -815,8 +805,8 @@
                 <h1>Bringing India's Natural & Cultural Treasures to the World</h1>
                 <p>From Ayurvedic wellness to fashion and lifestyle goods, Velantraa connects India's finest products with global markets.</p>
                 <div>
-                    <a href="products.html" class="btn">View Products</a>
-                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    <a href="#products-page" class="btn" id="view-products-btn">View Products</a>
+                    <a href="#contact-page" class="btn" id="contact-us-btn">Contact Us</a>
                 </div>
             </div>
         </section>
@@ -951,7 +941,7 @@
                 <div class="team-grid">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="https://z-cdn-media.chatglm.cn/files/c1cdf180-a862-46ed-9e8a-8fae95ae440d_Shruti.JPG?auth_key=1789720153-9e3c482e99db44deb5191d1b5068713d-0-16b061648456c1039f042fe6396a2a06" alt="Shruti Joshi">
+                            <img src="https://z-cdn-media.chatglm.cn/files/3178527e-37a6-4ba7-ba0f-fab67e7903e3_Shruti_Latest.jpg?auth_key=1790052892-f7aa7e34265e4ce8acab8bfbc53b4fc7-0-9e8570b649f9dbebb2680e40de8856c8" alt="Shruti Joshi" onerror="this.src='https://via.placeholder.com/300x420?text=Shruti+Joshi'">
                         </div>
                         <div class="member-info">
                             <h3>Shruti Joshi</h3>
@@ -1138,24 +1128,24 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="mission-vision.html">Mission & Vision</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#home-page">Home</a></li>
+                        <li><a href="#about-page">About Us</a></li>
+                        <li><a href="#mission-vision-page">Mission & Vision</a></li>
+                        <li><a href="#team-page">Our Team</a></li>
+                        <li><a href="#products-page">Products</a></li>
+                        <li><a href="#contact-page">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Our Products</h3>
                     <ul>
-                        <li><a href="products.html">Agriculture Products</a></li>
-                        <li><a href="products.html">Natural Powders & Extracts</a></li>
-                        <li><a href="products.html">Spices & Blends</a></li>
-                        <li><a href="products.html">Herbal & Ayurvedic Products</a></li>
-                        <li><a href="products.html">Flowers & Botanicals</a></li>
-                        <li><a href="products.html">Organic & Sustainable</a></li>
-                        <li><a href="products.html">Fashion & Lifestyle</a></li>
+                        <li><a href="#products-page">Agriculture Products</a></li>
+                        <li><a href="#products-page">Natural Powders & Extracts</a></li>
+                        <li><a href="#products-page">Spices & Blends</a></li>
+                        <li><a href="#products-page">Herbal & Ayurvedic Products</a></li>
+                        <li><a href="#products-page">Flowers & Botanicals</a></li>
+                        <li><a href="#products-page">Organic & Sustainable</a></li>
+                        <li><a href="#products-page">Fashion & Lifestyle</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1207,32 +1197,41 @@
                 const href = this.getAttribute('href');
                 let pageId = 'home-page';
                 
-                if (href === 'about.html') pageId = 'about-page';
-                else if (href === 'mission-vision.html') pageId = 'mission-vision-page';
-                else if (href === 'team.html') pageId = 'team-page';
-                else if (href === 'products.html') pageId = 'products-page';
-                else if (href === 'contact.html') pageId = 'contact-page';
+                if (href === '#about-page') pageId = 'about-page';
+                else if (href === '#mission-vision-page') pageId = 'mission-vision-page';
+                else if (href === '#team-page') pageId = 'team-page';
+                else if (href === '#products-page') pageId = 'products-page';
+                else if (href === '#contact-page') pageId = 'contact-page';
                 
                 showPage(pageId);
             });
         });
 
+        // Hero section buttons
+        document.getElementById('view-products-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('products-page');
+        });
+
+        document.getElementById('contact-us-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('contact-page');
+        });
+
         // Footer links
         document.querySelectorAll('footer a').forEach(link => {
             link.addEventListener('click', function(e) {
-                if (this.getAttribute('href').endsWith('.html')) {
-                    e.preventDefault();
-                    const href = this.getAttribute('href');
-                    let pageId = 'home-page';
-                    
-                    if (href === 'about.html') pageId = 'about-page';
-                    else if (href === 'mission-vision.html') pageId = 'mission-vision-page';
-                    else if (href === 'team.html') pageId = 'team-page';
-                    else if (href === 'products.html') pageId = 'products-page';
-                    else if (href === 'contact.html') pageId = 'contact-page';
-                    
-                    showPage(pageId);
-                }
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                let pageId = 'home-page';
+                
+                if (href === '#about-page') pageId = 'about-page';
+                else if (href === '#mission-vision-page') pageId = 'mission-vision-page';
+                else if (href === '#team-page') pageId = 'team-page';
+                else if (href === '#products-page') pageId = 'products-page';
+                else if (href === '#contact-page') pageId = 'contact-page';
+                
+                showPage(pageId);
             });
         });
 
