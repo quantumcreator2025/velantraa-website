@@ -1115,14 +1115,14 @@
                     <img src="https://z-cdn-media.chatglm.cn/files/bffb1549-4c15-449e-b613-22072b773584_Logo%20without%20Background_Velantraa.png?auth_key=1788333934-60f33241d3254dff856ea431c7b9c15d-0-baf5a7a25eb81c2beed6a48e260f8e8f" alt="Velantraa Exports LLP" class="footer-logo">
                     <p>India's Gateway to Global Exports</p>
                     <div class="social-links">
-                        <a href="https://instagram.com/velantraaexports" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://x.com/velantraa" target="_blank">
+                        <a href="https://instagram.com/velantraaexports" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/velantraa" target="_blank" rel="noopener noreferrer">
                             <svg class="x-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                             </svg>
                         </a>
-                        <a href="https://linkedin.com/company/velantraa" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.reddit.com/user/Flat_View_2234/" target="_blank"><i class="fab fa-reddit"></i></a>
+                        <a href="https://linkedin.com/company/velantraa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.reddit.com/user/Flat_View_2234/" target="_blank" rel="noopener noreferrer"><i class="fab fa-reddit"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -1190,20 +1190,29 @@
             window.scrollTo(0, 0);
         }
 
+        // Check if a link is an internal page link
+        function isInternalLink(href) {
+            return href.startsWith('#') && href.includes('-page');
+        }
+
         // Navigation links
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault();
                 const href = this.getAttribute('href');
-                let pageId = 'home-page';
                 
-                if (href === '#about-page') pageId = 'about-page';
-                else if (href === '#mission-vision-page') pageId = 'mission-vision-page';
-                else if (href === '#team-page') pageId = 'team-page';
-                else if (href === '#products-page') pageId = 'products-page';
-                else if (href === '#contact-page') pageId = 'contact-page';
-                
-                showPage(pageId);
+                if (isInternalLink(href)) {
+                    e.preventDefault();
+                    let pageId = 'home-page';
+                    
+                    if (href === '#about-page') pageId = 'about-page';
+                    else if (href === '#mission-vision-page') pageId = 'mission-vision-page';
+                    else if (href === '#team-page') pageId = 'team-page';
+                    else if (href === '#products-page') pageId = 'products-page';
+                    else if (href === '#contact-page') pageId = 'contact-page';
+                    
+                    showPage(pageId);
+                }
+                // External links will use default behavior
             });
         });
 
@@ -1221,17 +1230,21 @@
         // Footer links
         document.querySelectorAll('footer a').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault();
                 const href = this.getAttribute('href');
-                let pageId = 'home-page';
                 
-                if (href === '#about-page') pageId = 'about-page';
-                else if (href === '#mission-vision-page') pageId = 'mission-vision-page';
-                else if (href === '#team-page') pageId = 'team-page';
-                else if (href === '#products-page') pageId = 'products-page';
-                else if (href === '#contact-page') pageId = 'contact-page';
-                
-                showPage(pageId);
+                if (isInternalLink(href)) {
+                    e.preventDefault();
+                    let pageId = 'home-page';
+                    
+                    if (href === '#about-page') pageId = 'about-page';
+                    else if (href === '#mission-vision-page') pageId = 'mission-vision-page';
+                    else if (href === '#team-page') pageId = 'team-page';
+                    else if (href === '#products-page') pageId = 'products-page';
+                    else if (href === '#contact-page') pageId = 'contact-page';
+                    
+                    showPage(pageId);
+                }
+                // External links will use default behavior
             });
         });
 
@@ -1240,4 +1253,3 @@
     </script>
 </body>
 </html>
-
